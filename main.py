@@ -1,10 +1,9 @@
 from functions import read_file
 while True:
     user_input = input("Enter a command (add, show, remove, edit, complete, quit): ").strip().lower()
+    if user_input:
 
-    match user_input:
-
-        case "show":
+        if user_input.startswith("show"):
             try:
                 todo_list = read_file()
                 if not todo_list:
@@ -15,13 +14,13 @@ while True:
             except FileNotFoundError:
                 print("This is file not found. Please create a new file.")
 
-        case "add":
+        if user_input.startswith("add"):
             item = input("Enter the task to add: ").strip()
             with open("files/todo.txt", "a") as file:
                 file.write(item + "\n")
             print(f"Added '{item}' to the list.")
 
-        case "remove" | "complete":
+        if user_input.startswith("complete") or user_input.startswith("remove"):
             try:
                 todo_list = read_file()
                 if not todo_list:
@@ -39,7 +38,7 @@ while True:
                 file.writelines(todo_list)
             print("Task removed.")
 
-        case "edit":
+        if user_input.startswith("edit"):
             with open("files/todo.txt", "r") as file:
                 todo_list = file.readlines()
             for index, item in enumerate(todo_list):
@@ -51,9 +50,9 @@ while True:
                 file.writelines(todo_list)
             print("Task updated.")
 
-        case "quit":
+        if user_input.startswith("quit"):
             print("Goodbye!")
             break
 
-        case _:
+        else:
             print("Invalid command. Try again.")
