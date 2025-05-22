@@ -1,0 +1,79 @@
+{
+  "quiz": [
+    {
+      "question": "What is the capital of France?",
+      "alternatives": ["Berlin", "Madrid", "Paris", "Rome"],
+      "correct_answer": "Paris"
+    },
+    {
+      "question": "Which element has the chemical symbol 'O'?",
+      "alternatives": ["Gold", "Oxygen", "Iron", "Osmium"],
+      "correct_answer": "Oxygen"
+    },
+    {
+      "question": "Who wrote 'To Kill a Mockingbird'?",
+      "alternatives": ["Harper Lee", "Mark Twain", "J.K. Rowling", "Ernest Hemingway"],
+      "correct_answer": "Harper Lee"
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "alternatives": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "correct_answer": "Mars"
+    },
+    {
+      "question": "What is the smallest prime number?",
+      "alternatives": ["0", "1", "2", "3"],
+      "correct_answer": "2"
+    },
+    {
+      "question": "In which continent is the Amazon Rainforest located?",
+      "alternatives": ["Africa", "Asia", "South America", "Australia"],
+      "correct_answer": "South America"
+    },
+    {
+      "question": "What is the boiling point of water at sea level?",
+      "alternatives": ["90°C", "100°C", "110°C", "120°C"],
+      "correct_answer": "100°C"
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "alternatives": ["Vincent Van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
+      "correct_answer": "Leonardo da Vinci"
+    },
+    {
+      "question": "Which language is primarily spoken in Brazil?",
+      "alternatives": ["Spanish", "Portuguese", "French", "English"],
+      "correct_answer": "Portuguese"
+    },
+    {
+      "question": "What is the largest ocean on Earth?",
+      "alternatives": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "correct_answer": "Pacific Ocean"
+    },
+    {
+      "question": "Which gas do plants absorb from the atmosphere?",
+      "alternatives": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+      "correct_answer": "Carbon Dioxide"
+    },
+    {
+      "question": "Which organ in the human body is responsible for pumping blood?",
+      "alternatives": ["Liver", "Brain", "Heart", "Lungs"],
+      "correct_answer": "Heart"
+    },
+    {
+      "question": "Which programming language is primarily used for Android app development?",
+      "alternatives": ["Python", "Swift", "Kotlin", "JavaScript"],
+      "correct_answer": "Kotlin"
+    },
+    {
+      "question": "What year did World War II end?",
+      "alternatives": ["1939", "1942", "1945", "1950"],
+      "correct_answer": "1945"
+    },
+    {
+      "question": "What is H2O more commonly known as?",
+      "alternatives": ["Salt", "Water", "Hydrogen Peroxide", "Oxygen"],
+      "correct_answer": "Water"
+    }
+  ]
+}

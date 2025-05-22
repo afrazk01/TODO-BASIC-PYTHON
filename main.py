@@ -1,56 +1,49 @@
-from functions import read_file
+import functions
 while True:
     user_input = input("Enter a command (add, show, remove, edit, complete, quit): ").strip().lower()
     if user_input:
 
         if user_input.startswith("show"):
             try:
-                todo_list = read_file()
+                todo_list = functions.read_file()
                 if not todo_list:
                     print("No tasks found.")
-                else:
-                    for index, item in enumerate(todo_list):
-                        print(f"{index+1}: {item.strip()}")
             except FileNotFoundError:
                 print("This is file not found. Please create a new file.")
 
-        if user_input.startswith("add"):
-            item = input("Enter the task to add: ").strip()
-            with open("files/todo.txt", "a") as file:
-                file.write(item + "\n")
-            print(f"Added '{item}' to the list.")
-
-        if user_input.startswith("complete") or user_input.startswith("remove"):
+        elif user_input.startswith("add"):
+            item = user_input[4:].strip()
+            if not item:
+                print("Please provide a task to add.")
+                continue
             try:
-                todo_list = read_file()
-                if not todo_list:
-                    print("No tasks found.")
-                    continue
-                if todo_list:
-                    for index, item in enumerate(todo_list):
-                        print(f"{index+1}: {item.strip()}")
+                functions.write_file(item)
+
             except FileNotFoundError:
                 print("This is file not found. Please create a new file.")
                 continue
-            task_no = int(input("Select the task number to remove: "))
-            todo_list.pop(task_no - 1)
-            with open("files/todo.txt", "w") as file:
-                file.writelines(todo_list)
-            print("Task removed.")
 
-        if user_input.startswith("edit"):
-            with open("files/todo.txt", "r") as file:
-                todo_list = file.readlines()
-            for index, item in enumerate(todo_list):
-                print(f"{index+1}: {item.strip()}")
+        elif user_input.startswith("complete") or user_input.startswith("remove"):
+            try:
+                todo_list = functions.read_file()
+                if not todo_list:
+                    print("No tasks found.")
+                    continue
+            except FileNotFoundError:
+                print("This is file not found. Please create a new file.")
+                continue
+            functions.remove_task(user_input, todo_list)
+
+        elif user_input.startswith("edit"):
+            todo_list = functions.readfile()
+            if not todo_list:
+                print("No tasks found.")
+                continue
             task_no = int(input("Select the task number to edit: "))
             new_item = input("Enter the new task: ").strip()
-            todo_list[task_no - 1] = new_item + "\n"
-            with open("files/todo.txt", "w") as file:
-                file.writelines(todo_list)
-            print("Task updated.")
+            functions.edit_task(task_no, new_item, todo_list)
 
-        if user_input.startswith("quit"):
+        elif user_input.startswith("quit"):
             print("Goodbye!")
             break
 
